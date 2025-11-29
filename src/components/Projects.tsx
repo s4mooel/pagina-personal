@@ -2,25 +2,9 @@ import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
-import spotifyProject from "@/assets/spotify-project.jpg";
-import movieProject from "@/assets/movie-project.jpg";
 import weatherProject from "@/assets/weather-project.jpg";
 
 const projects = [
-  {
-    title: "Spotify Data Analysis",
-    description: "Análisis profundo de datos de Spotify utilizando Python y visualización interactiva para descubrir patrones de escucha y tendencias musicales.",
-    image: spotifyProject,
-    tech: ["Python", "Pandas", "Matplotlib", "Spotify API"],
-    github: "https://github.com/s4mooel/spotify-analysis",
-  },
-  {
-    title: "Movie Finder",
-    description: "Aplicación web para buscar y descubrir películas con filtros avanzados, integración con APIs externas y diseño responsive moderno.",
-    image: movieProject,
-    tech: ["React", "JavaScript", "API REST", "Tailwind CSS"],
-    github: "https://github.com/s4mooel/movie-finder",
-  },
   {
     title: "Weather Report App",
     description: "Dashboard del clima con pronósticos en tiempo real, gráficos interactivos y alertas meteorológicas para múltiples ubicaciones.",
@@ -51,7 +35,7 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex justify-center">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -59,6 +43,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="max-w-md w-full"
               >
                 <Card className="card-gradient border-border/50 overflow-hidden h-full flex flex-col hover:border-primary/50 transition-all duration-300 hover:glow group">
                   <div className="relative overflow-hidden">
