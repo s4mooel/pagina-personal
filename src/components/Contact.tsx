@@ -129,7 +129,7 @@ const Contact = () => {
 
                 <div className="space-y-4">
                   <a
-                    href="https://github.com/s4mooel"
+                    href="https://github.com/s4mooel/proyecto-weather-report"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
@@ -144,7 +144,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/s4m0l/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
@@ -154,12 +154,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-semibold">LinkedIn</p>
-                      <p className="text-sm text-muted-foreground">Samuel Ibañez</p>
+                      <p className="text-sm text-muted-foreground">s4m0l</p>
                     </div>
                   </a>
 
                   <a
-                    href="mailto:samuel@example.com"
+                    href="mailto:zaratesamu99@gmail.com"
                     className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
                   >
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -167,7 +167,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
-                      <p className="text-sm text-muted-foreground">samuel@example.com</p>
+                      <p className="text-sm text-muted-foreground">zaratesamu99@gmail.com</p>
                     </div>
                   </a>
                 </div>
