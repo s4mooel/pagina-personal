@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-muted-foreground text-center md:text-left">
-            © 2025 Samuel Ibañez |s4m0l|  — Todos los derechos reservados.
+            © 2025 Samuel Ibañez | s4m0l |  — Todos los derechos reservados.
           </p>
           
           <div className="flex gap-6">
