@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
-import weatherProject from "@/assets/weather-project.jpg";
+import weatherProject from "@/assets/weather-app-screenshot.png";
 
 const projects = [
   {
     title: "Weather Report App",
-    description: "Dashboard del clima con pronósticos en tiempo real, gráficos interactivos y alertas meteorológicas para múltiples ubicaciones.",
+    description: "Proyecto de una aplicación web moderna que muestra el clima actual y el pronóstico de los próximos días, desarrollada con HTML, CSS y JavaScript usando la API de OpenWeatherMap.",
     image: weatherProject,
-    tech: ["JavaScript", "OpenWeather API", "Chart.js", "HTML/CSS"],
+    tech: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
     github: "https://github.com/s4mooel/weather-app",
   },
 ];
