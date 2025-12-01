@@ -129,6 +129,21 @@ const Contact = () => {
 
                 <div className="space-y-4">
                   <a
+                    href="https://github.com/s4mooel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Github className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">GitHub</p>
+                      <p className="text-sm text-muted-foreground">@s4mooel</p>
+                    </div>
+                  </a>
+
+                  <a
                     href="https://www.linkedin.com/in/s4m0l/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -140,21 +155,6 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold">LinkedIn</p>
                       <p className="text-sm text-muted-foreground">s4m0l</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://github.com/s4mooel/proyecto-weather-report"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Github className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">GitHub</p>
-                      <p className="text-sm text-muted-foreground">@s4mooel</p>
                     </div>
                   </a>
 
