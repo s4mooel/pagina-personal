@@ -6,7 +6,7 @@ const skills = [
   {
     icon: Code2,
     title: "Desarrollo Web",
-    items: ["Python", "JavaScript", "React"],
+    items: ["Python", "JavaScript", "React", "HTML", "CSS"],
   },
   {
     icon: Database,
@@ -41,9 +41,7 @@ const About = () => {
               Sobre <span className="text-gradient">Mí</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Soy un estudiante apasionado por el análisis de datos y la creación de soluciones tecnológicas. 
-              Me fascina experimentar con nuevas tecnologías web y transformar datos en insights valiosos 
-              que impulsen la toma de decisiones.
+              Estudiante de Ingeniería de Sistemas en busca de prácticas con interés en desarrollo web, bases de datos, análisis de datos y la tecnología manejando lenguajes, herramientas técnicas y digitales como JavaScript, HTML, CSS, SQL, Python y R, que he aplicado en proyectos académicos para el desarrollo de sitios web, análisis de datos y gestión de bases de datos. También manejo entornos como VS Code, GitHub y MySQL Workbench, que utilizo para el control de versiones, pruebas y documentación de código.
             </p>
           </div>
 
