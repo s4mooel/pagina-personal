@@ -36,7 +36,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl text-muted-foreground"
           >
-            Estudiante de Ingeniería de Sistemas | Desarrollo Web | Análisis de Datos
+            Estudiante de Ingeniería de Sistemas interesado en Desarrollo Web y Análisis de Datos
           </motion.p>
           
           <motion.div
