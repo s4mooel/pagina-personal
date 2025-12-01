@@ -11,7 +11,7 @@ const skills = [
   {
     icon: Database,
     title: "Bases de Datos",
-    items: ["SQL", "Power BI"],
+    items: ["SQL", "R", "Excel", "Tableau"],
   },
   {
     icon: GitBranch,
