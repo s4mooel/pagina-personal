@@ -10,7 +10,7 @@ const projects = [
     description: "Proyecto de una aplicación web moderna que muestra el clima actual y el pronóstico de los próximos días, desarrollada con HTML, CSS y JavaScript usando la API de OpenWeatherMap.",
     image: weatherProject,
     tech: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
-    github: "https://github.com/s4mooel/weather-app",
+    github: "https://github.com/s4mooel/proyecto-weather-report",
   },
 ];
 
