@@ -1,44 +1,34 @@
 import { motion } from "framer-motion";
-import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Label } from "./ui/label";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
+
+const contactLinks = [
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "s4m0l",
+    href: "https://www.linkedin.com/in/s4m0l/",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "@s4mooel",
+    href: "https://github.com/s4mooel",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "zaratesamu99@gmail.com",
+    href: "mailto:zaratesamu99@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Teléfono",
+    value: "+57 321 278 3040",
+    href: "tel:+573212783040",
+  },
+];
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Por favor completa todos los campos",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Simulate form submission
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Gracias por contactarme. Te responderé pronto.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
@@ -51,128 +41,35 @@ const Contact = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">
-              ¿Hablamos de tu <span className="text-gradient">Proyecto</span>?
+              <span className="text-gradient">Contacto</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Estoy siempre abierto a nuevas oportunidades y colaboraciones. 
-              No dudes en contactarme para cualquier consulta.
+              ¿Tienes alguna pregunta o propuesta? No dudes en contactarme.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Card className="card-gradient border-border/50 p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nombre</Label>
-                    <Input
-                      id="name"
-                      placeholder="Tu nombre"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-background border-border"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-background border-border"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Mensaje</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Cuéntame sobre tu proyecto..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-background border-border resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow"
-                  >
-                    Enviar Mensaje
-                  </Button>
-                </form>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Conéctate conmigo</h3>
-                <p className="text-muted-foreground mb-8">
-                  Sígueme en mis redes sociales o envíame un email directo.
-                </p>
-
-                <div className="space-y-4">
-                  <a
-                    href="https://github.com/s4mooel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Github className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">GitHub</p>
-                      <p className="text-sm text-muted-foreground">@s4mooel</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/s4m0l/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Linkedin className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">LinkedIn</p>
-                      <p className="text-sm text-muted-foreground">s4m0l</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="mailto:zaratesamu99@gmail.com"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <p className="text-sm text-muted-foreground">zaratesamu99@gmail.com</p>
-                    </div>
-                  </a>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactLinks.map((link, index) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center gap-4 p-6 rounded-xl bg-secondary/50 hover:bg-secondary border border-border/50 hover:border-primary/50 transition-all duration-300 hover:glow group"
+              >
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <link.icon className="w-7 h-7 text-primary" />
                 </div>
-              </div>
-            </motion.div>
+                <div className="text-center">
+                  <p className="font-semibold text-lg">{link.label}</p>
+                  <p className="text-sm text-muted-foreground">{link.value}</p>
+                </div>
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </div>
