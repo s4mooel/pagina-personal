@@ -6,12 +6,12 @@ const skills = [
   {
     icon: Code2,
     title: "Desarrollo Web",
-    items: ["JavaScript", "React", "HTML", "CSS, TypeScript, React"],
+    items: ["JavaScript", "React", "HTML", "CSS", "TypeScript"],
   },
   {
     icon: Database,
     title: "Bases de Datos",
-    items: ["SQL", "R", "Excel", "Tableau"],
+    items: ["SQL", "Excel", "Tableau"],
   },
   {
     icon: GitBranch,
@@ -21,7 +21,7 @@ const skills = [
   {
     icon: LineChart,
     title: "Análisis de Datos",
-    items: ["Python, Visualización", "Estadística"],
+    items: ["Python", "R", "Visualización", "Estadística"],
   },
 ];
 
