@@ -30,8 +30,7 @@ const Projects = () => {
               Proyectos <span className="text-gradient">Destacados</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Algunos de los proyectos en los que he trabajado, combinando análisis de datos 
-              y desarrollo web para crear soluciones funcionales.
+              Algunos de los proyectos en los que he trabajado:
             </p>
           </div>
 
