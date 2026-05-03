@@ -16,7 +16,7 @@ const skills = [
   {
     icon: GitBranch,
     title: "Control de Versiones",
-    items: ["Git", "GitHub"],
+    items: ["Git", "GitHub", "Google Apps Script", "Google Antigravity"],
   },
   {
     icon: LineChart,
