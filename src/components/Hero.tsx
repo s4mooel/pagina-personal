@@ -20,7 +20,7 @@ const Hero = () => {
         playsInline
         poster=""
       >
-        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src={heroBgAsset.url} type="video/mp4" />
       </video>
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-background/70" />
