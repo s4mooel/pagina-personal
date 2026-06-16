@@ -10,9 +10,21 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 animate-pulse" />
-      
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster=""
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-background/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+
       <div className="container mx-auto max-w-4xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl text-muted-foreground"
           >
-            Estudiante de Ingeniería de Sistemas interesado en Desarrollo Web y Análisis de Datos
+            Ingeniero de Sistemas | Analista de Datos | Desarrollo Web | UI/UX | IA Generativa
           </motion.p>
           
           <motion.div
