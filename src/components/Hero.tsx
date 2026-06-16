@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import heroBgAsset from "@/assets/hero-bg.mp4.asset.json";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
