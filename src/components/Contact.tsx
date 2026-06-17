@@ -58,8 +58,8 @@ const Contact = () => {
                 viewport={{ once: true }}
                 className="flex flex-col items-center gap-4 p-6 rounded-xl bg-secondary/50 hover:bg-secondary border border-border/50 hover:border-primary/50 transition-all duration-300 hover:glow group"
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <link.icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
+                  <link.icon className="w-7 h-7 text-brand" />
                 </div>
                 <div className="text-center">
                   <p className="font-semibold text-lg">{link.label}</p>

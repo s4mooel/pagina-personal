@@ -55,8 +55,8 @@ const Education = () => {
             <Card className="card-gradient border-border/50 p-8 hover:border-primary/50 transition-all duration-300">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Briefcase className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
+                    <Briefcase className="w-7 h-7 text-brand" />
                   </div>
                   <h3 className="text-2xl font-semibold">Experiencia Profesional</h3>
                 </div>
@@ -83,8 +83,8 @@ const Education = () => {
               <Card className="card-gradient border-border/50 p-8 h-full hover:border-primary/50 transition-all duration-300">
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <GraduationCap className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
+                      <GraduationCap className="w-7 h-7 text-brand" />
                     </div>
                     <h3 className="text-2xl font-semibold">Educación</h3>
                   </div>
@@ -113,8 +113,8 @@ const Education = () => {
               <Card className="card-gradient border-border/50 p-8 h-full hover:border-primary/50 transition-all duration-300">
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Award className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
+                      <Award className="w-7 h-7 text-brand" />
                     </div>
                     <h3 className="text-2xl font-semibold">Certificaciones</h3>
                   </div>
