@@ -67,16 +67,16 @@ const About = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="card-gradient border-border/50 p-6 h-full hover:border-primary/50 transition-all duration-300 hover:glow">
+                <Card className="card-gradient border-border/50 p-6 h-full hover:border-brand/50 transition-all duration-300 hover:glow">
                   <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <skill.icon className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center">
+                      <skill.icon className="w-6 h-6 text-brand" />
                     </div>
                     <h3 className="text-xl font-semibold">{skill.title}</h3>
                     <ul className="space-y-2">
                       {skill.items.map((item) => (
                         <li key={item} className="text-muted-foreground flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand" />
                           {item}
                         </li>
                       ))}
