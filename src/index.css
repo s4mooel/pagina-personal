@@ -33,6 +33,9 @@
     --input: 0 0% 18%;
     --ring: 0 0% 80%;
 
+    --brand: 0 84% 55%;
+    --brand-foreground: 0 0% 100%;
+
     --radius: 1rem;
     
     --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 10%), hsl(0, 0%, 0%));
@@ -86,6 +89,9 @@
     --border: 0 0% 18%;
     --input: 0 0% 18%;
     --ring: 0 0% 80%;
+
+    --brand: 0 84% 55%;
+    --brand-foreground: 0 0% 100%;
     
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 96%;
