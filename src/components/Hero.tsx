@@ -1,9 +1,19 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
-import heroBgAsset from "@/assets/hero-bg.mp4.asset.json";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Start the background video a few seconds after entering the page
+    const timer = setTimeout(() => {
+      videoRef.current?.play().catch(() => {});
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -13,14 +23,14 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Video background */}
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
         loop
         muted
         playsInline
         poster=""
       >
-        <source src={heroBgAsset.url} type="video/mp4" />
+        <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-background/70" />
@@ -85,7 +95,7 @@ const Hero = () => {
               href="https://github.com/s4mooel"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -93,13 +103,13 @@ const Hero = () => {
               href="https://www.linkedin.com/in/s4m0l/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:zaratesamu99@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Mail className="w-6 h-6" />
             </a>

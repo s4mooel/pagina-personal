@@ -14,7 +14,7 @@ const Footer = () => {
               href="https://github.com/s4mooel"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-brand transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
@@ -23,14 +23,14 @@ const Footer = () => {
               href="https://www.linkedin.com/in/s4m0l/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-brand transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:zaratesamu99@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-brand transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
