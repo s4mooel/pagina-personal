@@ -1,19 +1,8 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Start the background video a few seconds after entering the page
-    const timer = setTimeout(() => {
-      videoRef.current?.play().catch(() => {});
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -23,12 +12,11 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Video background */}
       <video
-        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
         loop
         muted
         playsInline
-        poster=""
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
