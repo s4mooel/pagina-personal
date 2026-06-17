@@ -95,7 +95,7 @@ const Hero = () => {
               href="https://github.com/s4mooel"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -103,13 +103,13 @@ const Hero = () => {
               href="https://www.linkedin.com/in/s4m0l/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:zaratesamu99@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-brand hover:text-brand/80 transition-colors"
             >
               <Mail className="w-6 h-6" />
             </a>
