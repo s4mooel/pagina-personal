@@ -36,13 +36,26 @@ const About = () => {
           viewport={{ once: true }}
           className="space-y-12"
         >
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Sobre <span className="text-gradient">Mí</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web, UI/UX e IA generativa. Manejo lenguajes, herramientas técnicas y digitales que he aplicado en proyectos para el desarrollo de sitios web, análisis de datos y gestión de bases de datos. También trabajo con entornos como VS Code, Git y GitHub para el control de versiones, pruebas y documentación de código.
-            </p>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-4 text-left order-1">
+              <h2 className="text-4xl md:text-5xl font-bold">
+                Sobre <span className="text-gradient">Mí</span>
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web, UI/UX e IA generativa. Manejo lenguajes, herramientas técnicas y digitales que he aplicado en proyectos para el desarrollo de sitios web, análisis de datos y gestión de bases de datos. También trabajo con entornos como VS Code, Git y GitHub para el control de versiones, pruebas y documentación de código.
+              </p>
+            </div>
+            <div className="order-2 flex justify-center md:justify-end">
+              <div className="relative">
+                <div className="absolute -inset-2 rounded-2xl bg-brand/20 blur-2xl" />
+                <img
+                  src="/samuel.jpg"
+                  alt="Samuel Ibañez, Ingeniero de Sistemas"
+                  className="relative rounded-2xl object-cover w-full max-w-sm border border-border/50 shadow-card"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
