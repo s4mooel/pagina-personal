@@ -1,8 +1,17 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.75;
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -12,7 +21,8 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       {/* Video background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover brightness-150"
         autoPlay
         loop
         muted
@@ -21,8 +31,8 @@ const Hero = () => {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-background/70" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+      <div className="absolute inset-0 bg-background/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <motion.div
