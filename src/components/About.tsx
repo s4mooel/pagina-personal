@@ -37,15 +37,27 @@ const About = () => {
           className="space-y-12"
         >
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4 text-left order-1">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="space-y-4 text-left order-1"
+            >
               <h2 className="text-4xl md:text-5xl font-bold">
                 Sobre <span className="text-gradient">Mí</span>
               </h2>
               <p className="text-lg text-muted-foreground">
                 Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web, UI/UX e IA generativa. Manejo lenguajes, herramientas técnicas y digitales que he aplicado en proyectos para el desarrollo de sitios web, análisis de datos y gestión de bases de datos. También trabajo con entornos como VS Code, Git y GitHub para el control de versiones, pruebas y documentación de código.
               </p>
-            </div>
-            <div className="order-2 flex justify-center md:justify-end">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="order-2 flex justify-center md:justify-end"
+            >
               <div className="relative">
                 <div className="absolute -inset-2 rounded-2xl bg-brand/20 blur-2xl" />
                 <img
@@ -55,7 +67,7 @@ const About = () => {
                   loading="lazy"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
