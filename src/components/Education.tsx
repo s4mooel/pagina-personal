@@ -64,9 +64,24 @@ const Education = () => {
                 <div className="p-4 rounded-lg bg-secondary/50">
                   <h4 className="text-lg font-semibold">Desarrollador Full Stack — Practicante</h4>
                   <p className="text-primary font-medium">Banco Davivienda</p>
-                  <p className="mt-2 text-muted-foreground">
-                    Desarrollo de dashboards y de un CRM de gestión comercial para apoyar la toma de decisiones y la operación del equipo.
-                  </p>
+                  <ul className="mt-3 space-y-2 text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                      <span>Mejoras integrales del CRM comercial interno: visualización de datos, rendimiento, automatización ETL y experiencia de usuario.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                      <span>Automaticé pipelines ETL con Google Apps Script y Python, logrando el 100% de los flujos críticos del CRM.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                      <span>Construí dashboards interactivos (Chart.js y Tabulator) para KPIs comerciales y análisis gerencial.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                      <span>Lideré el rediseño UI/UX de módulos clave: +36% usuarios activos y +292% gestiones registradas.</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </Card>
