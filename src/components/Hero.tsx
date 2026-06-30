@@ -7,8 +7,17 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 1.75;
+    const video = videoRef.current;
+    if (video) {
+      video.playbackRate = 1.75;
+      video.muted = true;
+      const tryPlay = () => {
+        video.play().catch(() => {});
+      };
+      tryPlay();
+      // Retry on first user interaction (some mobile browsers block autoplay)
+      document.addEventListener("touchstart", tryPlay, { once: true });
+      return () => document.removeEventListener("touchstart", tryPlay);
     }
   }, []);
 
@@ -27,6 +36,7 @@ const Hero = () => {
         loop
         muted
         playsInline
+        preload="auto"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
