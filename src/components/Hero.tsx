@@ -9,7 +9,7 @@ const Hero = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.playbackRate = 1.75;
+      video.playbackRate = 1.25;
       video.muted = true;
       const tryPlay = () => {
         video.play().catch(() => {});
