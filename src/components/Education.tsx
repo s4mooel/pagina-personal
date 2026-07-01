@@ -158,12 +158,12 @@ const Education = () => {
                   <div className="flex flex-col items-center gap-3 pt-2">
                     <img
                       src={gcpBadge.url}
-                      alt="Insignia Google Cloud Computing Foundations Certificate"
+                      alt="Google Cloud Computing Foundations Certificate"
                       className="w-40 h-40 object-contain"
                       loading="lazy"
                     />
                     <p className="text-sm text-muted-foreground text-center">
-                      Insignia — Google Cloud Computing Foundations
+                      Google Cloud Computing Foundations
                     </p>
                   </div>
                 </div>
