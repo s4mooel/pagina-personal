@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { GraduationCap, Award, Calendar, Briefcase } from "lucide-react";
-import gcpBadge from "@/assets/gcp-badge.png.asset.json";
 
 const certifications = [
   {
@@ -157,13 +156,13 @@ const Education = () => {
 
                   <div className="flex flex-col items-center gap-3 pt-2">
                     <img
-                      src={gcpBadge.url}
-                      alt="Insignia Google Cloud Computing Foundations Certificate"
+                      src="/gcp-badge.png"
+                      alt="Google Cloud Computing Foundations Certificate"
                       className="w-40 h-40 object-contain"
                       loading="lazy"
                     />
                     <p className="text-sm text-muted-foreground text-center">
-                      Insignia — Google Cloud Computing Foundations
+                      Google Cloud Computing Foundations
                     </p>
                   </div>
                 </div>
