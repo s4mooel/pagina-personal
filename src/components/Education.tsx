@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "./ui/card";
 import { GraduationCap, Award, Calendar, Briefcase } from "lucide-react";
+import gcpBadge from "@/assets/gcp-badge.png.asset.json";
 
 const certifications = [
   {
@@ -8,12 +9,8 @@ const certifications = [
     issuer: "Google",
   },
   {
-    name: "Fundamentos de la Ciberseguridad",
-    issuer: "Google",
-  },
-  {
-    name: "Scrum Fundamentals Certified (SFC™)",
-    issuer: "SCRUMstudy",
+    name: "Google Cloud Computing Foundations Certificate",
+    issuer: "Google Cloud",
   },
   {
     name: "Curso de Prompt Engineering",
@@ -21,6 +18,14 @@ const certifications = [
   },
   {
     name: "Curso de Frontend Developer",
+    issuer: "Platzi",
+  },
+  {
+    name: "Curso de Fundamentos de Machine Learning",
+    issuer: "Platzi",
+  },
+  {
+    name: "Curso Profesional de DevOps",
     issuer: "Platzi",
   },
 ];
@@ -148,6 +153,18 @@ const Education = () => {
                         <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                       </motion.div>
                     ))}
+                  </div>
+
+                  <div className="flex flex-col items-center gap-3 pt-2">
+                    <img
+                      src={gcpBadge.url}
+                      alt="Insignia Google Cloud Computing Foundations Certificate"
+                      className="w-40 h-40 object-contain"
+                      loading="lazy"
+                    />
+                    <p className="text-sm text-muted-foreground text-center">
+                      Insignia — Google Cloud Computing Foundations
+                    </p>
                   </div>
                 </div>
               </Card>
