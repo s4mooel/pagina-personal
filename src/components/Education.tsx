@@ -1,175 +1,73 @@
 import { motion } from "framer-motion";
-import { Card } from "./ui/card";
-import { GraduationCap, Award, Calendar, Briefcase } from "lucide-react";
 
-const certifications = [
-  {
-    name: "Google Data Analytics",
-    issuer: "Google",
-  },
-  {
-    name: "Google Cloud Computing Foundations Certificate",
-    issuer: "Google Cloud",
-  },
-  {
-    name: "Curso de Prompt Engineering",
-    issuer: "Platzi",
-  },
-  {
-    name: "Curso de Frontend Developer",
-    issuer: "Platzi",
-  },
-  {
-    name: "Curso de Fundamentos de Machine Learning",
-    issuer: "Platzi",
-  },
-  {
-    name: "Curso Profesional de DevOps",
-    issuer: "Platzi",
-  },
+const experience = [
+  "Mejoras integrales del CRM comercial interno: visualización de datos, rendimiento, automatización ETL y experiencia de usuario.",
+  "Automaticé pipelines ETL con Google Apps Script y Python, logrando el 100% de los flujos críticos del CRM.",
+  "Construí dashboards interactivos (Chart.js y Tabulator) para KPIs comerciales y análisis gerencial.",
+  "Lideré el rediseño UI/UX de módulos clave: +36% usuarios activos y +292% gestiones registradas.",
 ];
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 px-6">
+    <section id="education" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-12"
+          className="mb-14 max-w-2xl"
         >
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Formación y <span className="text-gradient">Experiencia</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Mi trayectoria educativa, experiencia profesional y certificaciones.
-            </p>
-          </div>
+          <p className="eyebrow mb-5">— Trayectoria</p>
+          <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.95]">
+            Formación y <span className="text-gradient">experiencia</span>.
+          </h2>
+        </motion.div>
 
-          {/* Experience Card */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* Experience — wider column (asymmetric) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            <div className="paper-card rounded-lg border border-border p-7 md:p-9 h-full">
+              <div className="flex items-baseline justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold">Práctica Profesional</h3>
+                  <p className="text-accent font-medium">Banco Davivienda</p>
+                </div>
+                <span className="eyebrow shrink-0">Experiencia</span>
+              </div>
+              <ul className="space-y-4">
+                {experience.map((item) => (
+                  <li key={item} className="flex gap-3 text-muted-foreground leading-relaxed">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Education — narrower column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
+            className="lg:col-span-5"
           >
-            <Card className="card-gradient border-border/50 p-8 hover:border-primary/50 transition-all duration-300">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
-                    <Briefcase className="w-7 h-7 text-brand" />
-                  </div>
-                  <h3 className="text-2xl font-semibold">Experiencia Profesional</h3>
-                </div>
-
-                <div className="p-4 rounded-lg bg-secondary/50">
-                  <h4 className="text-lg font-semibold">Desarrollador Full Stack — Practicante</h4>
-                  <p className="text-primary font-medium">Banco Davivienda</p>
-                  <ul className="mt-3 space-y-2 text-muted-foreground">
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      <span>Mejoras integrales del CRM comercial interno: visualización de datos, rendimiento, automatización ETL y experiencia de usuario.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      <span>Automaticé pipelines ETL con Google Apps Script y Python, logrando el 100% de los flujos críticos del CRM.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      <span>Construí dashboards interactivos (Chart.js y Tabulator) para KPIs comerciales y análisis gerencial.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      <span>Lideré el rediseño UI/UX de módulos clave: +36% usuarios activos y +292% gestiones registradas.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
+            <div className="paper-card rounded-lg border border-border p-7 md:p-9 h-full flex flex-col">
+              <span className="eyebrow mb-6">Educación</span>
+              <h3 className="text-2xl font-bold leading-tight">Ingeniería de Sistemas</h3>
+              <p className="text-accent font-medium mt-1">Universidad Jorge Tadeo Lozano</p>
+              <p className="text-muted-foreground mt-auto pt-6 text-sm">2022 — Actualidad</p>
+            </div>
           </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Education Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Card className="card-gradient border-border/50 p-8 h-full hover:border-primary/50 transition-all duration-300">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
-                      <GraduationCap className="w-7 h-7 text-brand" />
-                    </div>
-                    <h3 className="text-2xl font-semibold">Educación</h3>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="p-4 rounded-lg bg-secondary/50">
-                      <h4 className="text-lg font-semibold">Ingeniería de Sistemas</h4>
-                      <p className="text-primary font-medium">Universidad Jorge Tadeo Lozano</p>
-                      <div className="flex items-center gap-2 mt-2 text-muted-foreground">
-                        <Calendar className="w-4 h-4" />
-                        <span>2022 - Actualidad</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Certifications Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Card className="card-gradient border-border/50 p-8 h-full hover:border-primary/50 transition-all duration-300">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-brand/10 flex items-center justify-center">
-                      <Award className="w-7 h-7 text-brand" />
-                    </div>
-                    <h3 className="text-2xl font-semibold">Certificaciones</h3>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    {certifications.map((cert, index) => (
-                      <motion.div
-                        key={cert.name}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
-                      >
-                        <h4 className="font-semibold">{cert.name}</h4>
-                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-col items-center gap-3 pt-2">
-                    <img
-                      src="/gcp-badge.png"
-                      alt="Google Cloud Computing Foundations Certificate"
-                      className="w-40 h-40 object-contain"
-                      loading="lazy"
-                    />
-                    <p className="text-sm text-muted-foreground text-center">
-                      Google Cloud Computing Foundations
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
