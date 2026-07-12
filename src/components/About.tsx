@@ -1,85 +1,92 @@
 import { motion } from "framer-motion";
-import { Card } from "./ui/card";
-import { Code2, Database, GitBranch, LineChart } from "lucide-react";
+import { Code2, Database, Workflow, Container } from "lucide-react";
 
 const skills = [
   {
     icon: Code2,
     title: "Desarrollo Web",
-    items: ["JavaScript", "React", "HTML", "CSS", "TypeScript"],
+    items: ["JavaScript", "TypeScript", "React", "HTML", "CSS"],
   },
   {
     icon: Database,
     title: "Bases de Datos",
-    items: ["SQL", "Excel"],
+    items: ["MySQL", "PostgreSQL", "SQL", "Excel"],
   },
   {
-    icon: GitBranch,
-    title: "Control de Versiones",
-    items: ["Git", "GitHub", "Google Apps Script", "Google Antigravity"],
+    icon: Workflow,
+    title: "Automatizaciones & Datos",
+    items: ["Python", "ETL", "Google Apps Script", "R", "Visualización"],
   },
   {
-    icon: LineChart,
-    title: "Análisis de Datos",
-    items: ["Python", "R", "Visualización", "Estadística"],
+    icon: Container,
+    title: "DevOps & Herramientas",
+    items: ["Docker", "Git", "GitHub", "Google Antigravity"],
   },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="space-y-12"
-        >
+        {/* Asymmetric: label + heading left, paragraph right */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-4 text-center max-w-3xl mx-auto"
+            className="lg:col-span-5"
           >
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Sobre <span className="text-gradient">Mí</span>
+            <p className="eyebrow mb-5">— Sobre mí</p>
+            <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.95]">
+              Datos, código y <span className="text-gradient">automatización</span>.
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web, UI/UX e IA generativa. Manejo lenguajes, herramientas técnicas y digitales que he aplicado en proyectos para el desarrollo de sitios web, análisis de datos y gestión de bases de datos. También trabajo con entornos como VS Code, Git y GitHub para el control de versiones, pruebas y documentación de código.
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="card-gradient border-border/50 p-6 h-full hover:border-brand/50 transition-all duration-300 hover:glow">
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center">
-                      <skill.icon className="w-6 h-6 text-brand" />
-                    </div>
-                    <h3 className="text-xl font-semibold">{skill.title}</h3>
-                    <ul className="space-y-2">
-                      {skill.items.map((item) => (
-                        <li key={item} className="text-muted-foreground flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 lg:pt-14"
+          >
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web,
+              UI/UX, automatizaciones e IA generativa. Diseño y automatizo flujos de
+              trabajo (ETL, pipelines y scripts) para que los procesos corran solos, y
+              construyo interfaces y visualizaciones que hacen los datos fáciles de
+              entender. Trabajo con entornos como VS Code, Git y GitHub para el control
+              de versiones, pruebas y documentación.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Skills grid — offset asymmetric widths */}
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-lg overflow-hidden border border-border">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className="bg-card p-7 hover:bg-secondary transition-colors group"
+            >
+              <div className="w-11 h-11 rounded-md bg-primary text-primary-foreground flex items-center justify-center mb-5 group-hover:bg-accent transition-colors">
+                <skill.icon className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold mb-4">{skill.title}</h3>
+              <ul className="space-y-2">
+                {skill.items.map((item) => (
+                  <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
