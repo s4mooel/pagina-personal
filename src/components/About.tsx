@@ -28,16 +28,15 @@ const About = () => {
   return (
     <section id="about" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+        <div className="flex flex-col gap-8 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex-1"
           >
             <p className="eyebrow mb-5">— Sobre mí</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
               Datos, código y <span className="text-gradient">automatización</span>.
             </h2>
           </motion.div>
@@ -47,7 +46,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex-1 lg:pt-10"
+            className="max-w-3xl"
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web,
