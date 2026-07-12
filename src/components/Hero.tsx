@@ -17,38 +17,31 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-28 pb-16 overflow-hidden">
       <div className="container mx-auto max-w-6xl w-full">
-        {/* Asymmetric grid: big type left, meta column right */}
-        <div className="grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-8">
+        {/* Asymmetric grid: big type left, photo right */}
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="eyebrow mb-6"
             >
-              — Portafolio · 2025
+              — Bienvenido
             </motion.p>
+
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-extrabold leading-[0.92] text-[15vw] sm:text-[12vw] lg:text-[8.5rem]"
+              className="font-display font-extrabold leading-[0.92] text-[10vw] sm:text-[8vw] lg:text-[6.5rem]"
             >
               Samuel
               <br />
               <span className="text-gradient not-italic">Ibañez</span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-8 max-w-xl text-lg md:text-xl text-muted-foreground"
-            >
-              Ingeniero de Sistemas construyendo cosas útiles entre los datos,
-              el código y el diseño.
-            </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,54 +65,58 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right meta column */}
+          {/* Right column for Photo */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="lg:col-span-4 lg:pb-6 space-y-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="hairline pt-5">
-              <p className="eyebrow mb-3">Enfoque</p>
-              <ul className="space-y-1.5">
-                {roles.map((role) => (
-                  <li key={role} className="text-base font-medium flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    {role}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="hairline pt-5 flex gap-5">
-              <a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="GitHub">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="mailto:zaratesamu99@gmail.com" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Email">
-                <Mail className="w-5 h-5" />
-              </a>
+            <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-secondary/50 border border-border overflow-hidden flex items-center justify-center">
+              {/* Image Placeholder - replace src with your actual photo */}
+              <img 
+                src="/samuel.jpg" 
+                alt="Samuel Ibañez" 
+                className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
+              />
             </div>
           </motion.div>
         </div>
+
+        {/* Bottom section: Enfoque and Socials */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 pt-8 hairline flex flex-col md:flex-row justify-between gap-8"
+        >
+          <div>
+            <p className="eyebrow mb-4">Enfoque</p>
+            <ul className="flex flex-wrap gap-4 md:gap-6">
+              {roles.map((role) => (
+                <li key={role} className="text-base font-medium flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  {role}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex gap-5 items-end">
+            <a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="GitHub">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="LinkedIn">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="mailto:zaratesamu99@gmail.com" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Email">
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Roles marquee */}
-      <div className="mt-16 lg:mt-24 border-y border-border overflow-hidden py-4 -mx-6 md:-mx-12">
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center shrink-0">
-              {roles.map((role) => (
-                <span key={role + i} className="mx-8 font-display text-2xl md:text-3xl font-bold text-foreground/25">
-                  {role} <span className="text-accent">✦</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+
     </section>
   );
 };

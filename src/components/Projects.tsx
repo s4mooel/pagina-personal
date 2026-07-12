@@ -3,6 +3,15 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import weatherProject from "@/assets/weather-app-screenshot.png";
+import weather1 from "@/assets/weather-1.png";
+import weather2 from "@/assets/weather-2.png";
+import pulse1 from "@/assets/pulse1.png";
+import pulse2 from "@/assets/pulse2.png";
+import pulse3 from "@/assets/pulse3.png";
+import pulse4 from "@/assets/pulse4.png";
+import pulse5 from "@/assets/pulse5.png";
+import pulse6 from "@/assets/pulse6.png";
+import pulse7 from "@/assets/pulse7.png";
 
 type Project = {
   title: string;
@@ -14,10 +23,18 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Pulse Commerce",
+    description:
+      "Sistema operativo para el comercio moderno. Plataforma integral (API-first) para gestionar pedidos, inventario y clientes. El proyecto incluye su propio sistema de diseño (tokens, UI kits) y una aplicación funcional en Next.js.",
+    images: [pulse1, pulse2, pulse3, pulse4, pulse5, pulse6, pulse7],
+    tech: ["Next.js 14", "Tailwind CSS", "React", "TypeScript", "Design System"],
+    github: "https://github.com/s4mooel/pulse-commerce",
+  },
+  {
     title: "Weather Report App",
     description:
       "Aplicación web moderna que muestra el clima actual y el pronóstico de los próximos días, desarrollada con HTML, CSS y JavaScript usando la API de OpenWeatherMap.",
-    images: [weatherProject],
+    images: [weatherProject, weather1, weather2],
     tech: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
     github: "https://github.com/s4mooel/proyecto-weather-report",
   },
@@ -49,7 +66,7 @@ const ProjectCarousel = ({ images, title }: { images: string[]; title: string })
               <img
                 src={src}
                 alt={`${title} — captura ${i + 1}`}
-                className="w-full aspect-[16/10] object-cover"
+                className="w-full aspect-[16/10] object-contain bg-background/50"
                 loading="lazy"
               />
             </div>
