@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// 🥚 Easter egg para devs curiosos
+// Easter egg para devs curiosos
 console.log(
   `%c
   ███████╗██╗  ██╗███╗   ███╗ ██████╗ ██╗     
@@ -21,11 +21,11 @@ console.log(
   "color: #c0421b; font-family: monospace; font-size: 10px;"
 );
 console.log(
-  `%cJajajaja q haces viendo esto? 👀\n` +
-  `%cContactame y hagamos parche 🤝\n\n` +
-  `📧 zaratesamu99@gmail.com\n` +
-  `💼 linkedin.com/in/s4m0l\n` +
-  `🐙 github.com/s4mooel`,
+  `%cJajajaja q haces viendo esto?\n` +
+  `%cContactame y hagamos parche\n\n` +
+  `zaratesamu99@gmail.com\n` +
+  `linkedin.com/in/s4m0l\n` +
+  `github.com/s4mooel`,
   "color: #1a1a1a; font-size: 14px; font-weight: bold;",
   "color: #c0421b; font-size: 13px;"
 );
@@ -41,7 +41,7 @@ console.log(
   "color: #00bfff; font-family: monospace; font-size: 10px;"
 );
 console.log(
-  `%c♬ Digsy's Dinner ♬\n\n` +
+  `%cDigsy's Dinner\n\n` +
   `%cWhat a life it would be\n` +
   `If you would come to mine for tea\n` +
   `I'll pick you up at half past three\n` +
@@ -67,7 +67,7 @@ console.log(
   `Then your friends will all go green\n` +
   `Then your friends will all go green\n` +
   `Then your friends will all go green\n` +
-  `For my lasagna 🎸`,
+  `For my lasagna`,
   "color: #00bfff; font-size: 14px; font-weight: bold;",
   "color: #888; font-size: 12px; font-style: italic; line-height: 1.6;"
 );
