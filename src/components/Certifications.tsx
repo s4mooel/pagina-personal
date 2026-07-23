@@ -39,12 +39,6 @@ const certifications: Cert[] = [
     logo: "https://cdn.simpleicons.org/platzi/1a1a1a",
     url: "https://platzi.com/p/samuel.ibanez/curso/12138-machine-learning/diploma/detalle/",
   },
-  {
-    name: "Profesional de DevOps",
-    issuer: "Platzi",
-    logo: "https://cdn.simpleicons.org/platzi/1a1a1a",
-    url: "#",
-  },
 ];
 
 const Certifications = () => {
