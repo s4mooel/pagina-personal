@@ -5,7 +5,7 @@ const skills = [
   {
     icon: Code2,
     title: "Desarrollo Web",
-    items: ["JavaScript", "TypeScript", "React", "HTML", "CSS"],
+    items: ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Java"],
   },
   {
     icon: Database,
@@ -20,7 +20,7 @@ const skills = [
   {
     icon: Container,
     title: "DevOps & Herramientas",
-    items: ["Docker", "Git", "GitHub", "Google Antigravity"],
+    items: ["Docker", "Git", "GitHub", "Google Antigravity", "GCP"],
   },
 ];
 
