@@ -20,7 +20,7 @@ const skills = [
   {
     icon: Container,
     title: "DevOps & Herramientas",
-    items: ["Docker", "Git", "GitHub", "Google Antigravity", "GCP"],
+    items: ["Docker", "Git", "GitHub", "Google Cloud", "Postman"],
   },
 ];
 
