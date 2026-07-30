@@ -49,12 +49,12 @@ const About = () => {
             className="max-w-3xl"
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Ingeniero de Sistemas con intereses en análisis de datos, desarrollo web,
-              UI/UX, automatizaciones e IA generativa. Diseño y automatizo flujos de
+              Ingeniero de Sistemas con intereses en desarrollo full stack, análisis de
+              datos, UI/UX, automatización e IA generativa. Diseño y automatizo flujos de
               trabajo (ETL, pipelines y scripts) para que los procesos corran solos, y
-              construyo interfaces y visualizaciones que hacen los datos fáciles de
-              entender. Trabajo con entornos como VS Code, Git y GitHub para el control
-              de versiones, pruebas y documentación.
+              construyo aplicaciones web completas —del backend a la interfaz— junto con
+              visualizaciones que hacen los datos fáciles de entender. Trabajo con VS
+              Code, Git y GitHub para el control de versiones, pruebas y documentación.
             </p>
           </motion.div>
         </div>
