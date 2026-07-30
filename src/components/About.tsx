@@ -14,7 +14,7 @@ const skills = [
   },
   {
     icon: Workflow,
-    title: "Innovación & Datos",
+    title: "Automatizaciones & Datos",
     items: ["Python", "ETL", "Google Apps Script", "R", "Visualización"],
   },
   {
