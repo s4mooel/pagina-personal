@@ -37,7 +37,7 @@ const About = () => {
           >
             <p className="eyebrow mb-5">— Sobre mí</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
-              Datos, código y <span className="text-gradient">automatización</span>.
+              Datos, código y <span className="text-gradient">innovación</span>.
             </h2>
           </motion.div>
 
@@ -50,7 +50,7 @@ const About = () => {
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Ingeniero de Sistemas con intereses en desarrollo full stack, análisis de
-              datos, UI/UX, innovación e IA generativa. Diseño y automatizo flujos de
+              datos, UI/UX, automatización e IA generativa. Diseño y automatizo flujos de
               trabajo (ETL, pipelines y scripts) para que los procesos corran solos, y
               construyo aplicaciones web completas —del backend a la interfaz— junto con
               visualizaciones que hacen los datos fáciles de entender. Trabajo con VS
