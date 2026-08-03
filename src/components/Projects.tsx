@@ -12,6 +12,11 @@ import pulse4 from "@/assets/pulse4.png";
 import pulse5 from "@/assets/pulse5.png";
 import pulse6 from "@/assets/pulse6.png";
 import pulse7 from "@/assets/pulse7.png";
+import spotify1 from "@/assets/spotify1.png";
+import spotify2 from "@/assets/spotify2.png";
+import spotify3 from "@/assets/spotify3.png";
+import spotify4 from "@/assets/spotify4.png";
+import spotify5 from "@/assets/spotify5.png";
 
 type Project = {
   title: string;
@@ -22,6 +27,24 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "Spotify Analytics & AI",
+    description:
+      "Dashboard interactivo que analiza más de 6,000 canciones de Spotify, comparando géneros musicales y prediciendo popularidad con Machine Learning. Incluye un motor de recomendación (K-Nearest Neighbors con distancia coseno) y un predictor de popularidad basado en Random Forest.",
+    images: [spotify1, spotify2, spotify3, spotify4, spotify5],
+    tech: [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "NumPy",
+      "Plotly",
+      "Scikit-learn",
+      "Random Forest",
+      "KNN",
+      "Machine Learning",
+    ],
+    github: "https://github.com/s4mooel/spotify-data-analysis",
+  },
   {
     title: "Pulse Commerce",
     description:
