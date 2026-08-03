@@ -45,7 +45,7 @@ const ScrambleText = ({ text, className }: { text: string; className?: string })
 const roles = [
   "Ingeniero de Sistemas",
   "Analista de Datos",
-  "Desarrollo Web",
+  "Machine Learning",
   "GCP",
   "IA Generativa",
   "Automatización",
