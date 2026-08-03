@@ -4,28 +4,28 @@ import { Code2, Database, Workflow, Container, BarChart3 } from "lucide-react";
 const skills = [
   {
     icon: Code2,
-    title: "Desarrollo Web",
+    title: "Desarrollo Web & Software",
     items: ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Java"],
   },
   {
     icon: Database,
-    title: "Bases de Datos",
-    items: ["MySQL", "PostgreSQL", "SQL", "Excel"],
+    title: "Bases de Datos & Cloud",
+    items: ["SQL", "MySQL", "PostgreSQL", "BigQuery", "Google Cloud"],
   },
   {
     icon: BarChart3,
     title: "Análisis de Datos & ML",
-    items: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn", "Machine Learning", "Streamlit"],
+    items: ["Python", "Pandas", "NumPy", "R", "Scikit-learn", "Machine Learning"],
   },
   {
     icon: Workflow,
-    title: "Automatizaciones & Datos",
-    items: ["ETL", "Google Apps Script", "R", "Visualización"],
+    title: "Visualización & BI",
+    items: ["Tableau", "Plotly", "Streamlit", "Excel", "Visualización"],
   },
   {
     icon: Container,
-    title: "DevOps & Herramientas",
-    items: ["Docker", "Git", "GitHub", "Google Cloud", "Postman"],
+    title: "Automatización & DevOps",
+    items: ["ETL", "Google Apps Script", "Docker", "Git", "GitHub", "Postman"],
   },
 ];
 
