@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Database, Workflow, Container } from "lucide-react";
+import { Code2, Database, Workflow, Container, BarChart3 } from "lucide-react";
 
 const skills = [
   {
@@ -13,9 +13,14 @@ const skills = [
     items: ["MySQL", "PostgreSQL", "SQL", "Excel"],
   },
   {
+    icon: BarChart3,
+    title: "Análisis de Datos & ML",
+    items: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn", "Machine Learning", "Streamlit"],
+  },
+  {
     icon: Workflow,
     title: "Automatizaciones & Datos",
-    items: ["Python", "ETL", "Google Apps Script", "R", "Visualización"],
+    items: ["ETL", "Google Apps Script", "R", "Visualización"],
   },
   {
     icon: Container,
@@ -49,17 +54,16 @@ const About = () => {
             className="max-w-3xl"
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Ingeniero de Sistemas con intereses en desarrollo full stack, análisis de
-              datos, UI/UX, automatización e IA generativa. Diseño y construyo
-              aplicaciones web completas, soluciones basadas en datos, visualizaciones y
-              flujos de trabajo eficientes. Trabajo con VS Code, Git y GitHub para el
-              control de versiones, pruebas y documentación.
+              Ingeniero de Sistemas con intereses en análisis de datos, UI/UX,
+              automatización e IA generativa. Diseño y construyo soluciones basadas en
+              datos, visualizaciones y flujos de trabajo eficientes. Trabajo con VS
+              Code, Git y GitHub para el control de versiones, pruebas y documentación.
             </p>
           </motion.div>
         </div>
 
         {/* Skills grid — offset asymmetric widths */}
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-lg overflow-hidden border border-border">
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-5 gap-px bg-border rounded-lg overflow-hidden border border-border">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.title}
