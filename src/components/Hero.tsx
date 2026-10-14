@@ -56,7 +56,6 @@ const roles = [
 const Hero = () => {
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 1000], [0, 200]);
-  const yImage = useTransform(scrollY, [0, 1000], [0, -150]);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -65,9 +64,9 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-28 pb-16 overflow-hidden">
       <div className="container mx-auto max-w-6xl w-full">
-        {/* Asymmetric grid: big type left, photo right */}
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <motion.div className="lg:col-span-7" style={{ y: yText }}>
+        <div>
+          <motion.div style={{ y: yText }}>
+
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,25 +108,8 @@ const Hero = () => {
               </button>
             </motion.div>
           </motion.div>
-
-          {/* Right column for Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ y: yImage }}
-            className="lg:col-span-5 flex justify-center lg:justify-end"
-          >
-            <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-secondary/50 border border-border overflow-hidden flex items-center justify-center">
-              {/* Image Placeholder - replace src with your actual photo */}
-              <img 
-                src="/samuel.jpg" 
-                alt="Samuel Ibañez" 
-                className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
-              />
-            </div>
-          </motion.div>
         </div>
+
 
         {/* Bottom section: Roles and Socials */}
         <motion.div
