@@ -43,7 +43,7 @@ const certifications: Cert[] = [
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="py-24 px-6 md:px-12 bg-secondary/40">
+    <section id="certifications" className="py-24 px-6 md:px-12 ">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const Certifications = () => {
           className="mb-14 max-w-2xl"
         >
           <p className="eyebrow mb-5">— Certificaciones</p>
-          <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.95]">
+          <h2 className="text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]">
             Formación <span className="text-gradient">continua</span>.
           </h2>
         </motion.div>
@@ -71,7 +71,7 @@ const Certifications = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 viewport={{ once: true }}
-                className="group paper-card rounded-lg border border-border p-6 flex items-start gap-4 hover:border-foreground transition-colors"
+                className="group rounded-2xl border-2 border-primary bg-card shadow-[6px_6px_0_hsl(var(--primary))] p-6 flex items-start gap-4 hover:shadow-[8px_8px_0_hsl(var(--accent))] hover:-translate-y-1 transition-all"
               >
                 <div className="w-12 h-12 rounded-md bg-secondary border border-border flex items-center justify-center shrink-0">
                   <img src={cert.logo} alt={`${cert.issuer} logo`} className="w-6 h-6" loading="lazy" />

@@ -37,7 +37,11 @@
     --brand: 12 76% 47%;
     --brand-foreground: 42 30% 96%;
 
-    --radius: 0.35rem;
+    --radius: 1rem;
+    --grid: 30 18% 84% / 0.55;
+    --ink: 0 0% 9%;
+    --ink-foreground: 42 30% 95%;
+    --ink-muted: 0 0% 62%;
 
     --shadow-paper: 0 1px 2px hsl(0 0% 0% / 0.05), 0 8px 24px -12px hsl(30 40% 20% / 0.12);
 
@@ -84,9 +88,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    /* subtle paper grain */
-    background-image: radial-gradient(hsl(30 20% 50% / 0.04) 1px, transparent 1px);
-    background-size: 4px 4px;
+    /* graph-paper canvas */
+    background-image:
+      linear-gradient(hsl(var(--grid)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid)) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: -1px -1px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -102,8 +109,13 @@
 @layer utilities {
   /* expressive accent emphasis for highlighted words */
   .text-gradient {
-    @apply text-accent italic;
+    @apply text-accent;
   }
+  .font-wide { font-stretch: 125%; }
+  .font-condensed { font-stretch: 70%; }
+  .bg-ink { background: hsl(var(--ink)); color: hsl(var(--ink-foreground)); }
+  .text-ink-muted { color: hsl(var(--ink-muted)); }
+  .border-ink { border-color: hsl(var(--ink-foreground) / 0.12); }
 
   .paper-card {
     background: hsl(var(--card));

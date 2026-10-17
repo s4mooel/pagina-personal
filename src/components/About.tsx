@@ -1,96 +1,82 @@
 import { motion } from "framer-motion";
-import { Code2, Database, Workflow, Container, BarChart3 } from "lucide-react";
+import { useState } from "react";
 
-const skills = [
-  {
-    icon: Code2,
-    title: "Desarrollo Web & Software",
-    items: ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Java"],
-  },
-  {
-    icon: Database,
-    title: "Bases de Datos & Cloud",
-    items: ["SQL", "MySQL", "PostgreSQL", "BigQuery", "Google Cloud"],
-  },
-  {
-    icon: BarChart3,
-    title: "Análisis de Datos & ML",
-    items: ["Python", "Pandas", "NumPy", "R", "Scikit-learn", "Machine Learning"],
-  },
-  {
-    icon: Workflow,
-    title: "Visualización & BI",
-    items: ["Tableau", "Plotly", "Streamlit", "Excel", "Visualización"],
-  },
-  {
-    icon: Container,
-    title: "Automatización & DevOps",
-    items: ["ETL", "Google Apps Script", "Docker", "Git", "GitHub", "Postman"],
-  },
+type Tool = { name: string; slug?: string };
+const groups: { title: string; tools: Tool[] }[] = [
+  { title: "Datos & ML", tools: [
+    { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
+    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning" } ] },
+  { title: "Visualización & BI", tools: [
+    { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" }, { name: "Excel" } ] },
+  { title: "Bases de datos & Cloud", tools: [
+    { name: "SQL" }, { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" },
+    { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" } ] },
+  { title: "Desarrollo Web", tools: [
+    { name: "JavaScript", slug: "javascript" }, { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" },
+    { name: "HTML", slug: "html5" }, { name: "CSS", slug: "css" }, { name: "Java" } ] },
+  { title: "Automatización & DevOps", tools: [
+    { name: "ETL" }, { name: "Apps Script", slug: "googleappsscript" }, { name: "Docker", slug: "docker" },
+    { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" }, { name: "Postman", slug: "postman" } ] },
 ];
 
-const About = () => {
+const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
+  const [failed, setFailed] = useState(!tool.slug);
   return (
-    <section id="about" className="py-24 px-6 md:px-12">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col gap-8 lg:gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <p className="eyebrow mb-5">— Sobre mí</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
-              Datos, código y <span className="text-gradient">innovación</span>.
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="max-w-3xl"
-          >
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Ingeniero de Sistemas con intereses en análisis de datos, UI/UX,
-              automatización e IA generativa. Diseño y construyo soluciones basadas en
-              datos, visualizaciones y flujos de trabajo eficientes. Trabajo con VS
-              Code, Git y GitHub para el control de versiones, pruebas y documentación.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Skills grid — offset asymmetric widths */}
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-5 gap-px bg-border rounded-lg overflow-hidden border border-border">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              viewport={{ once: true }}
-              className="bg-card p-7 hover:bg-secondary transition-colors group"
-            >
-              <div className="w-11 h-11 rounded-md bg-primary text-primary-foreground flex items-center justify-center mb-5 group-hover:bg-accent transition-colors">
-                <skill.icon className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold mb-4">{skill.title}</h3>
-              <ul className="space-y-2">
-                {skill.items.map((item) => (
-                  <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-accent" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: i * 0.04 }}
+      whileHover={{ y: -4, rotate: -2 }}
+      className="flex flex-col items-center gap-3"
+    >
+      <div className="w-20 h-20 rounded-2xl bg-card border-2 border-primary shadow-[4px_4px_0_hsl(var(--primary))] flex items-center justify-center transition-colors hover:bg-accent/10">
+        {failed ? (
+          <span className="font-display font-black text-lg">{tool.name.slice(0, 2).toUpperCase()}</span>
+        ) : (
+          <img src={`https://cdn.simpleicons.org/${tool.slug}/141414`} alt="" className="w-8 h-8" loading="lazy" onError={() => setFailed(true)} />
+        )}
       </div>
-    </section>
+      <span className="text-sm font-semibold text-center">{tool.name}</span>
+    </motion.div>
   );
 };
+
+const About = () => (
+  <section id="about" className="py-24 px-6 md:px-12">
+    <div className="container mx-auto max-w-6xl">
+      <div className="grid lg:grid-cols-12 gap-10 mb-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="lg:col-span-6 text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]"
+        >
+          Datos, código e <span className="text-accent">innovación</span>.
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+          className="lg:col-span-6 text-lg md:text-xl text-muted-foreground leading-relaxed self-end"
+        >
+          Ingeniero de Sistemas enfocado en análisis de datos, UI/UX, IA generativa y automatización.
+          Diseño soluciones basadas en datos y visualizaciones claras, y trabajo con VS Code, Git y GitHub
+          para control de versiones, pruebas y documentación.
+        </motion.p>
+      </div>
+
+      <h3 className="text-3xl md:text-4xl font-bold mb-12">
+        Mis <span className="text-accent">herramientas</span>
+      </h3>
+      <div className="space-y-14">
+        {groups.map((g) => (
+          <div key={g.title} className="grid md:grid-cols-12 gap-6 items-start">
+            <p className="md:col-span-3 eyebrow pt-6">{g.title}</p>
+            <div className="md:col-span-9 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+              {g.tools.map((t, i) => <ToolTile key={t.name} tool={t} i={i} />)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default About;
