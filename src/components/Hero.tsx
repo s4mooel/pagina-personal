@@ -7,7 +7,7 @@ const focus = ["Análisis de Datos", "Machine Learning", "UI/UX", "IA Generativa
 
 const line = {
   hidden: { y: "105%" },
-  show: (i: number) => ({ y: 0, transition: { duration: 0.8, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] } }),
+  show: (i: number) => ({ y: 0, transition: { duration: 0.8, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } }),
 };
 
 const Hero = () => {
