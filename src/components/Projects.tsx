@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import weatherProject from "@/assets/weather-app-screenshot.png";
 import weather1 from "@/assets/weather-1.png";
@@ -132,63 +133,66 @@ const ProjectCarousel = ({ images, title }: { images: string[]; title: string })
 };
 
 const Projects = () => {
+  const [open, setOpen] = useState<Project | null>(null);
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 bg-secondary/40">
+    <section id="projects" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-14 max-w-2xl"
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9] mb-14"
         >
-          <p className="eyebrow mb-5">— Trabajo seleccionado</p>
-          <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.95]">
-            Proyectos <span className="text-gradient">destacados</span>.
-          </h2>
-        </motion.div>
+          Mis <span className="text-accent">proyectos</span>
+        </motion.h2>
 
-        <div className="space-y-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.article
+            <motion.button
               key={project.title}
+              onClick={() => setOpen(project)}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center paper-card rounded-lg border border-border p-5 md:p-8"
+              className="group text-left focus-visible:outline-none"
             >
-              <div className="lg:col-span-7">
-                <ProjectCarousel images={project.images} title={project.title} />
+              <div className="relative overflow-hidden rounded-2xl border-2 border-primary bg-card shadow-[6px_6px_0_hsl(var(--primary))] group-hover:shadow-[10px_10px_0_hsl(var(--accent))] group-hover:-translate-x-1 group-hover:-translate-y-1 group-focus-visible:shadow-[10px_10px_0_hsl(var(--accent))] transition-all duration-300">
+                <img src={project.images[0]} alt={project.title} className="w-full aspect-[4/3] object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <span className="absolute top-3 left-3 bg-ink text-xs font-semibold px-3 py-1 rounded-full">
+                  {project.images.length} capturas
+                </span>
+                <span className="absolute bottom-3 right-3 w-11 h-11 rounded-full bg-accent text-accent-foreground flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                  <ArrowUpRight className="w-5 h-5" />
+                </span>
               </div>
-
-              <div className="lg:col-span-5 space-y-5">
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-medium rounded-full border border-border text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent transition-colors"
-                >
-                  Ver en GitHub
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              </div>
-            </motion.article>
+              <h3 className="mt-6 text-2xl font-bold">{project.title}</h3>
+              <p className="mt-2 text-sm font-semibold text-accent">
+                {project.tech.slice(0, 4).map((t) => `[${t}]`).join("  ")}
+              </p>
+            </motion.button>
           ))}
         </div>
       </div>
+
+      <Dialog open={!!open} onOpenChange={(v) => !v && setOpen(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border-2 border-primary">
+          {open && (
+            <div className="space-y-6">
+              <ProjectCarousel images={open.images} title={open.title} />
+              <DialogTitle className="text-3xl font-bold">{open.title}</DialogTitle>
+              <DialogDescription className="text-base leading-relaxed">{open.description}</DialogDescription>
+              <div className="flex flex-wrap gap-2">
+                {open.tech.map((t) => (
+                  <span key={t} className="px-3 py-1 text-xs font-semibold rounded-full border border-primary">{t}</span>
+                ))}
+              </div>
+              <a href={open.github} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent transition-colors">
+                Ver en GitHub <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

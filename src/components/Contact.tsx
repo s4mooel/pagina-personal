@@ -21,7 +21,7 @@ const Contact = () => {
             className="lg:col-span-7"
           >
             <p className="eyebrow mb-5">— Contacto</p>
-            <h2 className="text-4xl md:text-7xl font-extrabold leading-[0.92]">
+            <h2 className="text-5xl md:text-8xl font-black uppercase font-condensed leading-[0.88]">
               Hablemos de<br /><span className="text-gradient">tu idea</span>.
             </h2>
           </motion.div>

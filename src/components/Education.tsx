@@ -19,7 +19,7 @@ const Education = () => {
           className="mb-14 max-w-2xl"
         >
           <p className="eyebrow mb-5">— Trayectoria</p>
-          <h2 className="text-4xl md:text-6xl font-extrabold leading-[0.95]">
+          <h2 className="text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]">
             Formación y <span className="text-gradient">experiencia</span>.
           </h2>
         </motion.div>
@@ -33,7 +33,7 @@ const Education = () => {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="paper-card rounded-lg border border-border p-7 md:p-9 h-full">
+            <div className="rounded-2xl border-2 border-primary bg-card shadow-[6px_6px_0_hsl(var(--primary))] p-7 md:p-9 h-full">
               <div className="flex items-baseline justify-between gap-4 mb-6">
                 <div>
                   <h3 className="text-2xl font-bold">Práctica Profesional</h3>
@@ -60,7 +60,7 @@ const Education = () => {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="paper-card rounded-lg border border-border p-7 md:p-9 h-full flex flex-col">
+            <div className="rounded-2xl border-2 border-primary bg-card shadow-[6px_6px_0_hsl(var(--primary))] p-7 md:p-9 h-full flex flex-col">
               <span className="eyebrow mb-6">Educación</span>
               <h3 className="text-2xl font-bold leading-tight">Ingeniería de Sistemas</h3>
               <p className="text-accent font-medium mt-1">Universidad Jorge Tadeo Lozano</p>
