@@ -56,9 +56,10 @@ const About = () => (
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
           className="lg:col-span-6 text-lg md:text-xl text-muted-foreground leading-relaxed self-end"
         >
-          Ingeniero de Sistemas enfocado en análisis de datos, UI/UX, IA generativa y automatización.
-          Diseño soluciones basadas en datos y visualizaciones claras, y trabajo con VS Code, Git y GitHub
-          para control de versiones, pruebas y documentación.
+          Ingeniero de Sistemas con enfoque en análisis e ingeniería de datos y desarrollo de software.
+          He trabajado con Python, SQL, BigQuery y Google Cloud en el sector financiero, creando
+          dashboards y mejorando procesos corporativos. También me interesan el diseño UI/UX,
+          la automatización y la aplicación de IA generativa.
         </motion.p>
       </div>
 

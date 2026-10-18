@@ -1,114 +1,67 @@
-import { motion } from "framer-motion";
-import { Copy, Check, Github, Linkedin, Zap, ArrowDownRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Copy, Check, Github, Linkedin, ArrowUpRight, ArrowDown } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const EMAIL = "zaratesamu99@gmail.com";
-const focus = ["Análisis de Datos", "Machine Learning", "UI/UX", "IA Generativa", "Automatización", "Google Cloud"];
-
-const line = {
-  hidden: { y: "105%" },
-  show: (i: number) => ({ y: 0, transition: { duration: 0.8, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } }),
-};
+const focus = ["Análisis de Datos", "Ingeniería de Datos", "Desarrollo de Software", "UI/UX", "IA Generativa", "Google Cloud"];
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+  const reducedMotion = useReducedMotion();
   const copy = async () => {
-    await navigator.clipboard.writeText(EMAIL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1800);
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setCopyError(false);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopyError(true);
+    }
   };
-
-  const words = [
-    { t: "DATOS", c: "text-accent" },
-    { t: "QUE", c: "" },
-    { t: "CUENTAN", c: "" },
-    { t: "HISTORIAS", c: "text-accent" },
-  ];
 
   return (
     <>
-      <section className="relative px-6 md:px-12 pt-32 md:pt-40 pb-16">
-        <div className="container mx-auto max-w-6xl grid lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-7">
-            <p className="eyebrow mb-6">Samuel Ibañez — Bogotá, CO</p>
-            <h1 className="font-display font-black uppercase leading-[0.86] tracking-tight text-[15vw] sm:text-[11vw] lg:text-[7.5rem] font-condensed">
-              {words.map((w, i) => (
-                <span key={w.t} className="block overflow-hidden">
-                  <motion.span custom={i} variants={line} initial="hidden" animate="show" className={`block ${w.c} ${i === 2 ? "pl-[12%]" : ""}`}>
-                    {w.t}
-                  </motion.span>
-                </span>
-              ))}
-            </h1>
+      <section className="relative px-6 md:px-12 pt-28 md:pt-36 pb-12">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b hero-rule pb-4 mb-9">
+            <p className="eyebrow">Portafolio personal / 2026</p>
+            <p className="text-xs font-medium text-muted-foreground">Bogotá, Colombia · UTC−5</p>
           </div>
-
-          {/* Profile card */}
-          <motion.aside
-            initial={{ opacity: 0, y: 30, rotate: 2 }}
-            animate={{ opacity: 1, y: 0, rotate: -1.5 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            whileHover={{ rotate: 0 }}
-            className="lg:col-span-5 w-full max-w-md lg:ml-auto"
-          >
-            <div className="bg-accent rounded-[1.75rem] pb-10 relative">
-              <div className="bg-ink rounded-[1.75rem] p-6 md:p-7">
-                <p className="text-sm text-ink-muted">Ingeniero de Sistemas</p>
-                <div className="flex items-center gap-4 mt-4">
-                  <div className="w-14 h-14 rounded-full bg-accent text-accent-foreground font-display font-black text-xl flex items-center justify-center">SI</div>
-                  <div>
-                    <p className="font-display text-2xl font-bold">Samuel Ibañez</p>
-                    <p className="text-sm text-ink-muted flex items-center gap-2">
-                      <span className="relative flex w-2 h-2">
-                        <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-75" />
-                        <span className="relative w-2 h-2 rounded-full bg-accent" />
-                      </span>
-                      Disponible para nuevos retos
-                    </p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3 mt-6">
-                  <a href={`mailto:${EMAIL}`} className="h-11 rounded-xl bg-[hsl(var(--ink-foreground)/0.12)] hover:bg-[hsl(var(--ink-foreground)/0.2)] text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
-                    Hablemos <ArrowDownRight className="w-4 h-4" />
-                  </a>
-                  <button onClick={copy} className="h-11 rounded-xl border border-ink hover:bg-[hsl(var(--ink-foreground)/0.08)] text-sm font-semibold flex items-center justify-center gap-2 transition-colors" aria-live="polite">
-                    {copied ? <Check className="w-4 h-4 text-accent" /> : <Copy className="w-4 h-4" />}
-                    {copied ? "¡Copiado!" : "Copiar email"}
-                  </button>
-                </div>
-              </div>
-              <p className="absolute bottom-2.5 inset-x-0 text-center text-sm font-semibold text-accent-foreground flex items-center justify-center gap-1.5">
-                <Zap className="w-4 h-4" /> Enfocado en datos con impacto
-              </p>
+          <motion.div initial={reducedMotion ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+            <div className="lg:col-span-8">
+              <p className="text-sm font-medium text-accent mb-6">Ingeniero de Sistemas</p>
+              <h1 className="hero-name font-display font-black uppercase">
+                <span className="block">Samuel</span>
+                <span className="block text-accent sm:pl-12">Ibañez<span className="text-foreground">.</span></span>
+              </h1>
+              <p className="mt-7 text-xl md:text-2xl font-medium">Desarrollador y Analista de Datos</p>
             </div>
-          </motion.aside>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="container mx-auto max-w-6xl mt-14 grid md:grid-cols-12 gap-6"
-        >
-          <span className="md:col-span-1 font-display text-6xl font-black text-accent leading-none">“</span>
-          <p className="md:col-span-7 text-lg md:text-xl leading-relaxed">
-            Convierto datos dispersos en decisiones claras: dashboards, modelos de Machine Learning y
-            automatizaciones que se sienten tan bien como funcionan.
-          </p>
-          <div className="md:col-span-4 flex md:justify-end items-start gap-3">
-            <a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-11 h-11 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:bg-accent transition-colors"><Github className="w-5 h-5" /></a>
-            <a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-11 h-11 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:bg-accent transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <aside className="lg:col-span-4 border-t-2 border-accent pt-5 pb-1">
+              <p className="eyebrow mb-5">01 / Perfil</p>
+              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">Experiencia en el sector financiero, desarrollando dashboards ejecutivos, optimizando datos en la nube y mejorando herramientas de gestión comercial.</p>
+              <div className="mt-6 flex items-center gap-2">
+                <Button asChild variant="ghost" size="icon" className="text-accent" title="GitHub"><a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github /></a></Button>
+                <Button asChild variant="ghost" size="icon" className="text-accent" title="LinkedIn"><a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin /></a></Button>
+                <span className="ml-2 text-xs text-muted-foreground">Código & trayectoria</span>
+              </div>
+            </aside>
+          </motion.div>
+          <div className="mt-10 pt-5 border-t hero-rule flex flex-wrap items-center justify-between gap-5">
+            <Button asChild variant="link" className="px-0 text-foreground"><a href="#projects">Proyectos seleccionados <ArrowDown /></a></Button>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90"><a href={`mailto:${EMAIL}`}>Contacto <ArrowUpRight /></a></Button>
+              <Button onClick={copy} variant="outline" aria-live="polite" title="Copiar correo electrónico">{copied ? <Check /> : <Copy />}{copied ? "Correo copiado" : "Copiar email"}</Button>
+            </div>
+            {copyError && <p role="status" className="w-full text-sm text-muted-foreground">{EMAIL}</p>}
           </div>
-        </motion.div>
+        </div>
       </section>
-
-      {/* Marquee band */}
-      <div className="bg-accent text-accent-foreground py-5 overflow-hidden -rotate-1 my-6 border-y-2 border-primary">
+      <div className="border-y border-accent/20 bg-accent text-accent-foreground py-4 overflow-hidden my-4" aria-label="Áreas de trabajo">
         <div className="flex w-max animate-marquee">
-          {[...focus, ...focus, ...focus, ...focus].map((f, i) => (
-            <span key={i} className="flex items-center font-display font-bold text-2xl md:text-3xl uppercase whitespace-nowrap">
-              <span className="mx-8">{f}</span>
-              <span aria-hidden>✱</span>
-            </span>
+          {[...focus, ...focus, ...focus, ...focus].map((item, i) => (
+            <span key={i} aria-hidden={i >= focus.length ? true : undefined} className="flex items-center font-display font-semibold text-lg md:text-xl whitespace-nowrap"><span className="mx-7">{item}</span><span aria-hidden className="opacity-50">/</span></span>
           ))}
         </div>
       </div>
