@@ -53,9 +53,9 @@ const Nav = () => {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Inicio"
-            className="mx-6 w-10 h-10 rounded-full bg-accent text-accent-foreground font-display font-black text-sm flex items-center justify-center hover:rotate-12 transition-transform"
+            className="mx-3 md:mx-5 px-4 h-10 rounded-full bg-accent text-accent-foreground font-display font-black text-xs tracking-tight flex items-center justify-center hover:-rotate-3 transition-transform"
           >
-            S/I
+            s4m0l
           </button>
           <div className="hidden md:flex flex-1 gap-1">
             {right.map((l) => <Item key={l.id} {...l} />)}
