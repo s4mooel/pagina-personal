@@ -5,3 +5,4 @@
 - [x] Make the opening profile personal and remove the unwanted label.
 - [x] Add BI tools and replace SQL, Java and ML placeholders.
 - [x] Add and verify the original CV download.
+- [x] Swap the monogram to s4m0l, drop the city/label line and the bank name from the profile.
