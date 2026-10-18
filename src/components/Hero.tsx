@@ -25,10 +25,6 @@ const Hero = () => {
     <>
       <section className="relative px-6 md:px-12 pt-28 md:pt-36 pb-12">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b hero-rule pb-4 mb-9">
-            <p className="eyebrow">Portafolio personal / 2026</p>
-            <p className="text-xs font-medium text-muted-foreground">Bogotá, Colombia · UTC−5</p>
-          </div>
           <motion.div initial={reducedMotion ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-8">
               <p className="text-sm font-medium text-accent mb-6">Ingeniero de Sistemas</p>
@@ -40,7 +36,7 @@ const Hero = () => {
             </div>
             <aside className="lg:col-span-4 border-t-2 border-accent pt-5 pb-1">
               <h2 className="eyebrow mb-5">01 / Sobre mí</h2>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">Soy Ingeniero de Sistemas y mi enfoque es el análisis de datos. En Banco Davivienda trabajé con dashboards y herramientas de gestión comercial. Me interesa explorar cómo los datos, el diseño UI/UX y la IA generativa pueden aportar a los proyectos que desarrollo.</p>
+              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">Soy Ingeniero de Sistemas y mi enfoque es el análisis de datos. He trabajado con dashboards, bases de datos y herramientas de gestión comercial. Me interesa explorar cómo los datos, el diseño UI/UX y la IA generativa pueden aportar a los proyectos que desarrollo.</p>
               <div className="mt-6 flex items-center gap-2">
                 <Button asChild variant="ghost" size="icon" className="text-accent" title="GitHub"><a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github /></a></Button>
                 <Button asChild variant="ghost" size="icon" className="text-accent" title="LinkedIn"><a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin /></a></Button>
