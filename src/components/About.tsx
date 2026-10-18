@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { BrainCircuit, Coffee, Database, ChartNoAxesColumnIncreasing, ChartSpline, type LucideIcon } from "lucide-react";
 
-type Tool = { name: string; slug?: string };
+type Tool = { name: string; slug?: string; icon?: LucideIcon };
 const groups: { title: string; tools: Tool[] }[] = [
   { title: "Datos & ML", tools: [
     { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
-    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning" } ] },
+    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit } ] },
   { title: "Visualización & BI", tools: [
+    { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline },
     { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" }, { name: "Excel" } ] },
   { title: "Bases de datos & Cloud", tools: [
-    { name: "SQL" }, { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" },
+    { name: "SQL", icon: Database }, { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" },
     { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" } ] },
   { title: "Desarrollo Web", tools: [
     { name: "JavaScript", slug: "javascript" }, { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" },
-    { name: "HTML", slug: "html5" }, { name: "CSS", slug: "css" }, { name: "Java" } ] },
+    { name: "HTML", slug: "html5" }, { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ] },
   { title: "Automatización & DevOps", tools: [
     { name: "ETL" }, { name: "Apps Script", slug: "googleappsscript" }, { name: "Docker", slug: "docker" },
     { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" }, { name: "Postman", slug: "postman" } ] },
@@ -21,6 +23,7 @@ const groups: { title: string; tools: Tool[] }[] = [
 
 const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
   const [failed, setFailed] = useState(!tool.slug);
+  const ToolIcon = tool.icon;
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -31,7 +34,7 @@ const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
       className="flex flex-col items-center gap-3"
     >
       <div className="w-20 h-20 rounded-2xl bg-card border-2 border-primary shadow-[4px_4px_0_hsl(var(--primary))] flex items-center justify-center transition-colors hover:bg-accent/10">
-        {failed ? (
+        {ToolIcon ? <ToolIcon className="w-8 h-8 text-foreground" aria-hidden="true" /> : failed ? (
           <span className="font-display font-black text-lg">{tool.name.slice(0, 2).toUpperCase()}</span>
         ) : (
           <img src={`https://cdn.simpleicons.org/${tool.slug}/141414`} alt="" className="w-8 h-8" loading="lazy" onError={() => setFailed(true)} />

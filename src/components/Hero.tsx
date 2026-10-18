@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Copy, Check, Github, Linkedin, ArrowUpRight, ArrowDown } from "lucide-react";
+import { Copy, Check, Github, Linkedin, ArrowUpRight, ArrowDown, Download } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -39,18 +39,18 @@ const Hero = () => {
               <p className="mt-7 text-xl md:text-2xl font-medium">Desarrollador y Analista de Datos</p>
             </div>
             <aside className="lg:col-span-4 border-t-2 border-accent pt-5 pb-1">
-              <p className="eyebrow mb-5">01 / Perfil</p>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">Experiencia en el sector financiero, desarrollando dashboards ejecutivos, optimizando datos en la nube y mejorando herramientas de gestión comercial.</p>
+              <h2 className="eyebrow mb-5">01 / Sobre mí</h2>
+              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">Soy Ingeniero de Sistemas y mi enfoque es el análisis de datos. En Banco Davivienda trabajé con dashboards y herramientas de gestión comercial. Me interesa explorar cómo los datos, el diseño UI/UX y la IA generativa pueden aportar a los proyectos que desarrollo.</p>
               <div className="mt-6 flex items-center gap-2">
                 <Button asChild variant="ghost" size="icon" className="text-accent" title="GitHub"><a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github /></a></Button>
                 <Button asChild variant="ghost" size="icon" className="text-accent" title="LinkedIn"><a href="https://www.linkedin.com/in/s4m0l/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin /></a></Button>
-                <span className="ml-2 text-xs text-muted-foreground">Código & trayectoria</span>
               </div>
             </aside>
           </motion.div>
           <div className="mt-10 pt-5 border-t hero-rule flex flex-wrap items-center justify-between gap-5">
             <Button asChild variant="link" className="px-0 text-foreground"><a href="#projects">Proyectos seleccionados <ArrowDown /></a></Button>
             <div className="flex flex-wrap items-center gap-3">
+              <Button asChild variant="outline"><a href="/downloads/Samuel-Ibanez-HV.pdf" download="Samuel-Ibanez-HV.pdf">Descargar HV <Download /></a></Button>
               <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90"><a href={`mailto:${EMAIL}`}>Contacto <ArrowUpRight /></a></Button>
               <Button onClick={copy} variant="outline" aria-live="polite" title="Copiar correo electrónico">{copied ? <Check /> : <Copy />}{copied ? "Correo copiado" : "Copiar email"}</Button>
             </div>
