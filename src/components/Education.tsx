@@ -24,6 +24,14 @@ const Education = () => {
           </h2>
         </motion.div>
 
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          {[["+36%", "usuarios activos"], ["+292%", "gestiones registradas"], ["100%", "flujos ETL críticos automatizados"]].map(([n, l]) => (
+            <div key={l} className="rounded-2xl border-2 border-primary bg-card p-5 text-center">
+              <p className="text-3xl md:text-5xl font-black font-condensed text-accent">{n}</p>
+              <p className="text-xs md:text-sm text-muted-foreground mt-1">{l}</p>
+            </div>
+          ))}
+        </div>
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Experience — wider column (asymmetric) */}
           <motion.div
@@ -39,7 +47,7 @@ const Education = () => {
                   <h3 className="text-2xl font-bold">Práctica Profesional</h3>
                   <p className="text-accent font-medium">Banco Davivienda</p>
                 </div>
-                <span className="eyebrow shrink-0">Experiencia</span>
+                <span className="eyebrow shrink-0">Ene 2026 — Jul 2026</span>
               </div>
               <ul className="space-y-4">
                 {experience.map((item) => (
@@ -64,7 +72,14 @@ const Education = () => {
               <span className="eyebrow mb-6">Educación</span>
               <h3 className="text-2xl font-bold leading-tight">Ingeniería de Sistemas</h3>
               <p className="text-accent font-medium mt-1">Universidad Jorge Tadeo Lozano</p>
-              <p className="text-muted-foreground mt-auto pt-6 text-sm">2022 — Actualidad</p>
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Formación en desarrollo de software, bases de datos, análisis de datos y computación en la nube.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                <li>· Práctica profesional en el sector financiero</li>
+                <li>· Proyectos de datos y Machine Learning</li>
+              </ul>
+              <p className="text-muted-foreground mt-auto pt-6 text-sm">2022 — 2026</p>
             </div>
           </motion.div>
         </div>
