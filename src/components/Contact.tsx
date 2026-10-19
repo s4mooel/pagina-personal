@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 const contactLinks = [
   { icon: Linkedin, label: "LinkedIn", value: "in/s4m0l", href: "https://www.linkedin.com/in/s4m0l/" },
   { icon: Github, label: "GitHub", value: "@s4mooel", href: "https://github.com/s4mooel" },
   { icon: Mail, label: "Email", value: "zaratesamu99@gmail.com", href: "mailto:zaratesamu99@gmail.com" },
-  { icon: Phone, label: "Teléfono", value: "+57 321 278 3040", href: "tel:+573212783040" },
 ];
 
 const Contact = () => {

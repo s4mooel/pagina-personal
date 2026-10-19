@@ -22,6 +22,9 @@ import spotify5 from "@/assets/spotify5.png";
 type Project = {
   title: string;
   description: string;
+  problem: string;
+  solution: string;
+  result: string;
   images: string[];
   tech: string[];
   github: string;
@@ -44,6 +47,9 @@ const projects: Project[] = [
       "KNN",
       "Machine Learning",
     ],
+    problem: "Entender qué hace popular una canción y cómo se diferencian los géneros.",
+    solution: "Dashboard en Streamlit con EDA, recomendador KNN (distancia coseno) y predictor Random Forest.",
+    result: "Más de 6,000 canciones analizadas y recomendaciones interactivas en tiempo real.",
     github: "https://github.com/s4mooel/spotify-data-analysis",
   },
   {
@@ -52,6 +58,9 @@ const projects: Project[] = [
       "Sistema operativo para el comercio moderno. Plataforma integral (API-first) para gestionar pedidos, inventario y clientes. El proyecto incluye su propio sistema de diseño (tokens, UI kits) y una aplicación funcional en Next.js.",
     images: [pulse1, pulse2, pulse3, pulse4, pulse5, pulse6, pulse7],
     tech: ["Next.js 14", "Tailwind CSS", "React", "TypeScript", "Design System"],
+    problem: "Gestionar pedidos, inventario y clientes suele requerir herramientas separadas.",
+    solution: "Plataforma API-first en Next.js con su propio sistema de diseño (tokens y UI kit).",
+    result: "Una sola interfaz coherente para toda la operación del comercio.",
     github: "https://github.com/s4mooel/pulse-commerce",
   },
   {
@@ -60,6 +69,9 @@ const projects: Project[] = [
       "Aplicación web moderna que muestra el clima actual y el pronóstico de los próximos días, desarrollada con HTML, CSS y JavaScript usando la API de OpenWeatherMap.",
     images: [weatherProject, weather1, weather2],
     tech: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
+    problem: "Consultar el clima y el pronóstico de forma rápida y clara.",
+    solution: "App web en JavaScript conectada a la API de OpenWeatherMap.",
+    result: "Clima actual y pronóstico de varios días en una interfaz limpia.",
     github: "https://github.com/s4mooel/proyecto-weather-report",
   },
 ];
@@ -156,7 +168,7 @@ const Projects = () => {
               className="group text-left focus-visible:outline-none"
             >
               <div className="relative overflow-hidden rounded-2xl border-2 border-primary bg-card shadow-[6px_6px_0_hsl(var(--primary))] group-hover:shadow-[10px_10px_0_hsl(var(--accent))] group-hover:-translate-x-1 group-hover:-translate-y-1 group-focus-visible:shadow-[10px_10px_0_hsl(var(--accent))] transition-all duration-300">
-                <img src={project.images[0]} alt={project.title} className="w-full aspect-[4/3] object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <img src={project.images[0]} alt={`Portada del proyecto ${project.title}`} className="w-full aspect-[4/3] object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <span className="absolute top-3 left-3 bg-ink text-xs font-semibold px-3 py-1 rounded-full">
                   {project.images.length} capturas
                 </span>
@@ -165,11 +177,20 @@ const Projects = () => {
                 </span>
               </div>
               <h3 className="mt-6 text-2xl font-bold">{project.title}</h3>
-              <p className="mt-2 text-sm font-semibold text-accent">
-                {project.tech.slice(0, 4).map((t) => `[${t}]`).join("  ")}
-              </p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{project.problem}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {project.tech.slice(0, 4).map((t) => (
+                  <span key={t} className="px-2.5 py-0.5 text-xs font-semibold rounded-full border border-primary">{t}</span>
+                ))}
+              </div>
             </motion.button>
           ))}
+        </div>
+        <div className="mt-14 flex justify-center">
+          <a href="https://github.com/s4mooel" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-2 border-primary px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors">
+            Ver más en GitHub <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
 
@@ -180,6 +201,14 @@ const Projects = () => {
               <ProjectCarousel images={open.images} title={open.title} />
               <DialogTitle className="text-3xl font-bold">{open.title}</DialogTitle>
               <DialogDescription className="text-base leading-relaxed">{open.description}</DialogDescription>
+              <dl className="grid sm:grid-cols-3 gap-4">
+                {([["Problema", open.problem], ["Solución", open.solution], ["Resultado", open.result]] as const).map(([k, v]) => (
+                  <div key={k} className="rounded-xl border border-border p-4">
+                    <dt className="eyebrow mb-2">{k}</dt>
+                    <dd className="text-sm text-muted-foreground leading-relaxed">{v}</dd>
+                  </div>
+                ))}
+              </dl>
               <div className="flex flex-wrap gap-2">
                 {open.tech.map((t) => (
                   <span key={t} className="px-3 py-1 text-xs font-semibold rounded-full border border-primary">{t}</span>
@@ -187,7 +216,7 @@ const Projects = () => {
               </div>
               <a href={open.github} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent transition-colors">
-                Ver en GitHub <ArrowUpRight className="w-4 h-4" />
+                Repositorio <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
           )}
