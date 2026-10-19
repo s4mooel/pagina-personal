@@ -56,7 +56,7 @@ const projects: Project[] = [
     title: "Pulse Commerce",
     description:
       "Sistema operativo para el comercio moderno. Plataforma integral (API-first) para gestionar pedidos, inventario y clientes. El proyecto incluye su propio sistema de diseño (tokens, UI kits) y una aplicación funcional en Next.js.",
-    images: [pulse1, pulse2, pulse3, pulse4, pulse5, pulse6, pulse7],
+    images: [pulse2, pulse1, pulse3, pulse4, pulse5, pulse6, pulse7],
     tech: ["Next.js 14", "Tailwind CSS", "React", "TypeScript", "Design System"],
     problem: "Gestionar pedidos, inventario y clientes suele requerir herramientas separadas.",
     solution: "Plataforma API-first en Next.js con su propio sistema de diseño (tokens y UI kit).",
@@ -149,9 +149,10 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
+        <p className="eyebrow mb-5">— Proyectos</p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9] mb-14"
+          className="break-words text-4xl sm:text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9] mb-14"
         >
           Mis <span className="text-accent">proyectos</span>
         </motion.h2>

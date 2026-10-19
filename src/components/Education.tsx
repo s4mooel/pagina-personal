@@ -19,7 +19,7 @@ const Education = () => {
           className="mb-14 max-w-2xl"
         >
           <p className="eyebrow mb-5">— Trayectoria</p>
-          <h2 className="text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]">
+          <h2 className="break-words text-4xl sm:text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]">
             Formación y <span className="text-gradient">experiencia</span>.
           </h2>
         </motion.div>

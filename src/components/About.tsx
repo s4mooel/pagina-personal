@@ -4,21 +4,18 @@ import { BrainCircuit, Coffee, Database, ChartNoAxesColumnIncreasing, ChartSplin
 
 type Tool = { name: string; slug?: string; icon?: LucideIcon };
 const groups: { title: string; tools: Tool[] }[] = [
-  { title: "Datos & ML", tools: [
+  { title: "Uso a diario", tools: [
     { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
-    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit } ] },
-  { title: "Visualización & BI", tools: [
-    { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline },
-    { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" }, { name: "Excel" } ] },
-  { title: "Bases de datos & Cloud", tools: [
-    { name: "SQL", icon: Database }, { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" },
-    { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" } ] },
-  { title: "Desarrollo Web", tools: [
-    { name: "JavaScript", slug: "javascript" }, { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" },
-    { name: "HTML", slug: "html5" }, { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ] },
-  { title: "Automatización & DevOps", tools: [
-    { name: "ETL" }, { name: "Apps Script", slug: "googleappsscript" }, { name: "Docker", slug: "docker" },
-    { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" }, { name: "Postman", slug: "postman" } ] },
+    { name: "SQL", icon: Database }, { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" },
+    { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline }, { name: "Excel" },
+    { name: "Apps Script", slug: "googleappsscript" }, { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" } ] },
+  { title: "He trabajado con", tools: [
+    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit },
+    { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" },
+    { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" }, { name: "ETL" },
+    { name: "Docker", slug: "docker" }, { name: "Postman", slug: "postman" }, { name: "JavaScript", slug: "javascript" },
+    { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" }, { name: "HTML", slug: "html5" },
+    { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ] },
 ];
 
 const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
@@ -48,10 +45,11 @@ const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
 const About = () => (
   <section id="about" className="py-24 px-6 md:px-12">
     <div className="container mx-auto max-w-6xl">
+      <p className="eyebrow mb-5">— Sobre mí</p>
       <div className="grid lg:grid-cols-12 gap-10 mb-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="lg:col-span-6 text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]"
+          className="lg:col-span-6 break-words text-4xl sm:text-5xl md:text-7xl font-black uppercase font-condensed leading-[0.9]"
         >
           Datos, código e <span className="text-accent">innovación</span>.
         </motion.h2>
@@ -66,6 +64,7 @@ const About = () => (
         </motion.p>
       </div>
 
+      <p className="eyebrow mb-5">— Herramientas</p>
       <h3 className="text-3xl md:text-4xl font-bold mb-12">
         Mis <span className="text-accent">herramientas</span>
       </h3>
