@@ -65,15 +65,8 @@ const About = () => (
       <h3 className="text-3xl md:text-4xl font-bold mb-12">
         Mis <span className="text-accent">herramientas</span>
       </h3>
-      <div className="space-y-14">
-        {groups.map((g) => (
-          <div key={g.title} className="grid md:grid-cols-12 gap-6 items-start">
-            <p className="md:col-span-3 eyebrow pt-6">{g.title}</p>
-            <div className="md:col-span-9 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-              {g.tools.map((t, i) => <ToolTile key={t.name} tool={t} i={i} />)}
-            </div>
-          </div>
-        ))}
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+        {tools.map((t, i) => <ToolTile key={t.name} tool={t} i={i} />)}
       </div>
     </div>
   </section>
