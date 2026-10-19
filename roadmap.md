@@ -6,3 +6,4 @@
 - [x] Add BI tools and replace SQL, Java and ML placeholders.
 - [x] Add and verify the original CV download.
 - [x] Swap the monogram to s4m0l, drop the city/label line and the bank name from the profile.
+- [x] Show all tools as one undivided grid (no "uso a diario" / "he trabajado con" split).

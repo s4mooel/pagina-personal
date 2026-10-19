@@ -3,20 +3,17 @@ import { useState } from "react";
 import { BrainCircuit, Coffee, Database, ChartNoAxesColumnIncreasing, ChartSpline, type LucideIcon } from "lucide-react";
 
 type Tool = { name: string; slug?: string; icon?: LucideIcon };
-const groups: { title: string; tools: Tool[] }[] = [
-  { title: "Uso a diario", tools: [
-    { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
-    { name: "SQL", icon: Database }, { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" },
-    { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline }, { name: "Excel" },
-    { name: "Apps Script", slug: "googleappsscript" }, { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" } ] },
-  { title: "He trabajado con", tools: [
-    { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit },
-    { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" },
-    { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" }, { name: "ETL" },
-    { name: "Docker", slug: "docker" }, { name: "Postman", slug: "postman" }, { name: "JavaScript", slug: "javascript" },
-    { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" }, { name: "HTML", slug: "html5" },
-    { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ] },
-];
+const tools: Tool[] = [
+  { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
+  { name: "SQL", icon: Database }, { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" },
+  { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline }, { name: "Excel" },
+  { name: "Apps Script", slug: "googleappsscript" }, { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" },
+  { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit },
+  { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" },
+  { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" }, { name: "ETL" },
+  { name: "Docker", slug: "docker" }, { name: "Postman", slug: "postman" }, { name: "JavaScript", slug: "javascript" },
+  { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" }, { name: "HTML", slug: "html5" },
+  { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ];
 
 const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
   const [failed, setFailed] = useState(!tool.slug);
@@ -68,15 +65,8 @@ const About = () => (
       <h3 className="text-3xl md:text-4xl font-bold mb-12">
         Mis <span className="text-accent">herramientas</span>
       </h3>
-      <div className="space-y-14">
-        {groups.map((g) => (
-          <div key={g.title} className="grid md:grid-cols-12 gap-6 items-start">
-            <p className="md:col-span-3 eyebrow pt-6">{g.title}</p>
-            <div className="md:col-span-9 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-              {g.tools.map((t, i) => <ToolTile key={t.name} tool={t} i={i} />)}
-            </div>
-          </div>
-        ))}
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+        {tools.map((t, i) => <ToolTile key={t.name} tool={t} i={i} />)}
       </div>
     </div>
   </section>
