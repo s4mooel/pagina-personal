@@ -1,19 +1,24 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { BrainCircuit, Coffee, Database, ChartNoAxesColumnIncreasing, ChartSpline, type LucideIcon } from "lucide-react";
+import {
+  BrainCircuit, Coffee, Database, ChartNoAxesColumnIncreasing, ChartSpline,
+  Table2, ChartColumn, Workflow, Bot, Rocket, Heart, type LucideIcon,
+} from "lucide-react";
 
 type Tool = { name: string; slug?: string; icon?: LucideIcon };
 const tools: Tool[] = [
   { name: "Python", slug: "python" }, { name: "Pandas", slug: "pandas" }, { name: "NumPy", slug: "numpy" },
   { name: "SQL", icon: Database }, { name: "BigQuery", slug: "googlebigquery" }, { name: "Google Cloud", slug: "googlecloud" },
-  { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline }, { name: "Excel" },
+  { name: "Power BI", icon: ChartNoAxesColumnIncreasing }, { name: "Looker Studio", icon: ChartSpline }, { name: "Excel", icon: Table2 },
   { name: "Apps Script", slug: "googleappsscript" }, { name: "Git", slug: "git" }, { name: "GitHub", slug: "github" },
   { name: "R", slug: "r" }, { name: "Scikit-learn", slug: "scikitlearn" }, { name: "Machine Learning", icon: BrainCircuit },
-  { name: "Tableau" }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" },
-  { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" }, { name: "ETL" },
+  { name: "Tableau", icon: ChartColumn }, { name: "Plotly", slug: "plotly" }, { name: "Streamlit", slug: "streamlit" },
+  { name: "MySQL", slug: "mysql" }, { name: "PostgreSQL", slug: "postgresql" }, { name: "ETL", icon: Workflow },
   { name: "Docker", slug: "docker" }, { name: "Postman", slug: "postman" }, { name: "JavaScript", slug: "javascript" },
   { name: "TypeScript", slug: "typescript" }, { name: "React", slug: "react" }, { name: "HTML", slug: "html5" },
-  { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee } ];
+  { name: "CSS", slug: "css" }, { name: "Java", icon: Coffee },
+  { name: "Claude", slug: "claude" }, { name: "ChatGPT", icon: Bot }, { name: "Gemini", slug: "googlegemini" },
+  { name: "Antigravity", icon: Rocket }, { name: "Lovable", icon: Heart } ];
 
 const ToolTile = ({ tool, i }: { tool: Tool; i: number }) => {
   const [failed, setFailed] = useState(!tool.slug);
